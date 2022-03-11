@@ -2,6 +2,7 @@ let posts = [];
 
 const likedPostsId = [];
 const reportedPostsId = [];
+// console.log(reportedPostsId);
 
 const getLikedPosts = () => {
   return posts.filter((post) => likedPostsId.includes(post.id));
@@ -53,7 +54,6 @@ const switchTab = (id) => {
 };
 
 const createPost = (post) => {
-  console.log(post);
   const image = post.image;
   // Problem 2: get user image form post parameter data
   const userImage = post.userImage;
@@ -157,7 +157,8 @@ const displayLikedPosts = () => {
 
 const displayReportedPosts = () => {
   const reportedPosts = getReportedPosts();
-  posts.forEach((post) => {
+  // Problem 4: loop throw on reportedposts not posts
+  reportedPosts.forEach((post) => {
     const div = createPost(post);
     document.getElementById("reported").appendChild(div);
   });
