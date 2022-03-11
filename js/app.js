@@ -122,11 +122,12 @@ const createPost = (post) => {
                   <hr/>
 
                   <div class="post__description">
+                  <!-- Problem 4: post comments is an array, array value access by index number -->
                     <small>
                       <a class="post__name--underline" href="#">
-                          ${post.comments?.user}
+                          ${post.comments[0]?.user}
                       </a>
-                      ${post.comments?.text}
+                      ${post.comments[0]?.text}
                     </small>
                   </div>
                   <span class="post__date-time">30 minutes ago</span>
