@@ -148,7 +148,9 @@ const showPosts = (posts) => {
 };
 
 const displayLikedPosts = () => {
-  const likedPosts = getLikedPosts();
+  // Problem 6: Clear previous liked post
+  document.getElementById('liked').textContent = '';
+  const likedPosts = getLikedPosts(); 
   likedPosts.forEach((post) => {
     const div = createPost(post);
     document.getElementById("liked").appendChild(div);
@@ -156,8 +158,9 @@ const displayLikedPosts = () => {
 };
 
 const displayReportedPosts = () => {
+  document.getElementById('reported').textContent = '';
   const reportedPosts = getReportedPosts();
-  // Problem 4: loop throw on reportedposts not posts
+  // Problem 5: loop throw on reportedposts not posts
   reportedPosts.forEach((post) => {
     const div = createPost(post);
     document.getElementById("reported").appendChild(div);
